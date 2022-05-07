@@ -32,7 +32,7 @@ export const CustomLabel = styled.label`
         color: var(--grey-1);
         position: absolute;
         left: 15px;
-        top: 53px;
+        top: 48px;
     }
     
     p{

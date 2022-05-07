@@ -29,15 +29,11 @@ const Cadastro = () =>{
         const {name,email,password} = data
         api.post("/user/register", {name:name, email:email, password:password})
         .then(response =>{ 
-            toast.success("usuário cadastrado",{
-                theme: "dark"
-            }) 
+            toast.success("usuário cadastrado") 
             history.push("/login")
         })
         .catch((err) => 
-            toast.error("algo deu errado",{
-                theme: "dark"
-              })
+            toast.error("algo deu errado")
         )
     } 
 
