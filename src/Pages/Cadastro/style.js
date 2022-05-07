@@ -85,6 +85,12 @@ export const CustomMain = styled.main`
 
         form>button{
             height: 54px;
+            margin-bottom: 13px;
+            margin-top: 0;
+        }
+
+        h1{
+            font-size: 40px;
         }
 
         p,a{

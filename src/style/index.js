@@ -16,6 +16,7 @@ export default createGlobalStyle`
     --black-2: #0C0D0D;
     --grey-1: #4E5555;
     --orange-1: #C85311;
+    --error: #B22222;
 }
 
 #root{

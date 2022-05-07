@@ -1,13 +1,14 @@
 import { CustomInput, CustomLabel } from "./style"
 
 
-const Input = ({children, label, ...rest}) =>{
+const Input = ({children,errors, register, name, label, ...rest}) =>{
     return(
         <>
-        <CustomLabel>
+        <CustomLabel >
             <p>{label}</p>
             {children}
-            <CustomInput {...rest}/>
+            <CustomInput errors={!!errors} {...register(name)} {...rest}/>
+            {!!errors&& <span>{errors}</span>}
         </CustomLabel>
         </>
     )

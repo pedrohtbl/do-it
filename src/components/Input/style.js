@@ -2,13 +2,14 @@ import styled from "styled-components"
 
 export const CustomInput = styled.input`
     width: 100%;
-    height: 78px;
+    height: 68px;
     background-color: var(--white-1);
     color: var(--grey-1);
-    border: 1px solid var(--black-1);
+    border: 1px solid ${(props) => (props.errors? "#B22222" : "#000000")};
     border-radius: 10px;
-    padding-left: 72px;
-    font-size: 30px;
+    padding-left: 62px;
+    font-size: 20px;
+    margin-bottom: 2px;
 
     @media (max-width: 1100px){
         font-size: 18px;
@@ -26,19 +27,23 @@ export const CustomLabel = styled.label`
     position: relative;
 
     svg{
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         color: var(--grey-1);
         position: absolute;
         left: 15px;
-        top: 63px;
+        top: 53px;
     }
     
     p{
-        margin-bottom: 9px;
-        font-size: 25px;
+        margin-bottom: 5px;
+        font-size: 20px;
         font-weight: 400;
         color: var(--black-1);
+    }
+
+    span{
+        color: var(--error);
     }
   
 
@@ -58,9 +63,17 @@ export const CustomLabel = styled.label`
 
     @media (max-width: 720px){
         width: 80%;
+        margin-bottom: 22px;
+
+        svg{
+            top: 40px;
+        }
         
         p{
-            font-size: 18px;
+            font-size: 14px;
+        }
+        span{
+            font-size: 14px;
         }
     }
     
