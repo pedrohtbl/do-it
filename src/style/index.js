@@ -23,6 +23,7 @@ export default createGlobalStyle`
     background-color: var(--primary-color);
     width: 100vw;
     height: 100vh;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +40,10 @@ a{
 }
 
 ul{
+    list-style: none;
+}
+
+li{
     list-style: none;
 }
 
