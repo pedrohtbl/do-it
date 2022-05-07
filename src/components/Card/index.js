@@ -1,13 +1,27 @@
 import { CustomLi } from "./style"
 import { FiCalendar, FiClipboard } from "react-icons/fi"
 import  Button from "../Button"
+import { useLogin } from "../../Providers/Login"
+import api from "../../Services/api"
 
 
-const Card = ({description,createdAt}) =>{
+const Card = ({task}) =>{
+
+    const {user} = useLogin()
+
+    const {description, createdAt,_id,updatedAt,completed, owner,success} = task
+
+    const completeTask = () =>{
+        api.put(`/task/${_id}`, {completed: true},{
+            headers: {
+                "Authorization" : `Bearer ${user.token}`
+            }
+        })
+    }
     
         return(
         <>
-        <CustomLi>
+        <CustomLi id={_id}>
             <div>
                 <FiClipboard/>
                 <p>{description}</p>
@@ -17,7 +31,7 @@ const Card = ({description,createdAt}) =>{
                 <FiCalendar/>
                 <p>{new Date(createdAt).toLocaleDateString("pt-BR", {day: "2-digit",month: "long",year: "numeric"})}</p>
             </section>
-            <Button>Concluir</Button>
+            <Button onClick={completeTask}>Concluir</Button>
         </CustomLi>
         </>
     )

@@ -54,7 +54,7 @@ const Dashboard = () =>{
         </CustomForm>
 
         <CustomUl>
-            {tasks.map(task => <Card key={task._id} id={task._id} description={task.description} createdAt={task.createdAt}/>)}
+            {tasks.map(task => <Card task={task} key={task._id}/>)}
         </CustomUl>
 
         </CustomMain>
