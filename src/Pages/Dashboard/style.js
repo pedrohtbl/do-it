@@ -8,16 +8,21 @@ export const CustomMain = styled.main`
     align-items: center;
     overflow-y: auto;
     
-    >svg{
+    header{
+        position: relative;
+        width: 100%;
+    }
+
+    header>svg{
         width: 30px;
         height: 30px;
         position: absolute;
-        right: 40px;
-        top:20px;
+        right: 20px;
+        top:-80px;
         cursor: pointer;
     }
 
-    >svg:hover{
+    header>svg:hover{
         color: var(--error);
     }
 
@@ -42,6 +47,11 @@ export const CustomMain = styled.main`
             margin-right: 0;
             width: 250px;
             height: 50px;
+        }
+
+        header>svg{
+            right: 5px;
+            top:-5px;
         }
     }
 `

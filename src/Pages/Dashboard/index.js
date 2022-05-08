@@ -79,7 +79,9 @@ const Dashboard = () =>{
     
     return (
         <CustomMain>
+            <header>
             <IoLogOutOutline onClick={logout}/>
+            </header>
         <CustomForm onSubmit={handleSubmit(onSubmit)}>
             <Input errors={errors.description?.message} label={new Date().toLocaleDateString("pt-BR", {day: "2-digit",month: "long",year: "numeric"})} register={register} name={"description"} type="text" placeholder="Nova tarefa"><FiEdit2/></Input>
             <Button type={"submit"}>Adicionar</Button>
