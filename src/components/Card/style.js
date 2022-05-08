@@ -10,12 +10,25 @@ export const CustomLi = styled.li`
     flex-direction: column;
     align-items: center;
 
+    >div>button{
+        width: 30px;
+        background-color: transparent;
+        border: none;
+        height: 30px;
+        margin: 0;
+        font-weight: 700;
+        position: absolute;
+        left: 235px;
+        top: -20px;
+    }
+
     div{
         display: flex;
         margin-top: 24px;
         justify-content: flex-start;
         width: 92%;
         margin-left: 24px;
+        position: relative;
     }
 
     span{
@@ -34,10 +47,15 @@ export const CustomLi = styled.li`
     }
 
     div>p{
-        font-size: 20px;
-        color: var(--black-2);
+        font-size: 18px;
         display: flex;
         align-items: center;
+        width: 70%;
+    }
+
+    div>p, section>p{
+        color: ${props => (props.completed ? "#C0C0C0" : "#0C0D0D" )};
+        text-decoration: ${props => (props.completed ? "line-through" : "none" )};
     }
 
     section{
@@ -48,7 +66,6 @@ export const CustomLi = styled.li`
 
     section>p{
         font-size: 20px;
-        color: var(--black-2);
         display: flex;
         align-items: center;
         margin-bottom: 116px;
