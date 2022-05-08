@@ -1,9 +1,16 @@
+import { Redirect } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import Button from "../../components/Button"
+import { useLogin } from "../../Providers/Login"
 import { CustomMain } from "./style"
 
 const Home = () =>{
     const history = useHistory()
+    const {user} = useLogin()
+
+    if(!!user.token){
+        return <Redirect to={"/dashboard"}/>
+    }
 
     return(
         <CustomMain>

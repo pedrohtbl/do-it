@@ -13,7 +13,9 @@ export const LoginProvider = ({children}) =>{
     const login = (userData)=>{
         api.post("/user/login", userData)
         .then((response) =>{
-            toast.success("Login Realizado")
+            toast.success("Login Realizado",{
+                theme:"dark"
+            })
             setUser(response.data)
             localStorage.setItem("@doIt:login", JSON.stringify(response.data))
             history.push("/dashboard")
@@ -23,15 +25,10 @@ export const LoginProvider = ({children}) =>{
         })
     }
 
-    const logout = (userData) =>{
-        api.post("/user/logout",{
-            headers: {
-                Authorization: `Bearer ${userData.token}`
-            }
-        })
-        .then(response =>{
-            localStorage.removeItem("doIt:login")
-        })
+    const logout = () =>{
+        setUser({})
+        localStorage.clear()
+        history.push("/")
     }
 
     return(

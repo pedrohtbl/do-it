@@ -7,6 +7,19 @@ export const CustomMain = styled.main`
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    
+    >svg{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 40px;
+        top:20px;
+        cursor: pointer;
+    }
+
+    >svg:hover{
+        color: var(--error);
+    }
 
     >div{
         width: 80%;
@@ -20,6 +33,16 @@ export const CustomMain = styled.main`
         height: 50px;
         margin-bottom: 70px;
         margin-right: 50px;
+    }
+
+    @media (max-width: 720px) {
+        padding-top: 30px;
+
+        div>button{
+            margin-right: 0;
+            width: 250px;
+            height: 50px;
+        }
     }
 `
 
@@ -43,7 +66,8 @@ export const CustomForm = styled.form`
     }
 
     label p{
-        font-size: 30px;
+        width: 100%;
+        font-size: 28px;
     }
 
     svg{
@@ -53,6 +77,31 @@ export const CustomForm = styled.form`
     input{
         height: 78px;
         width: 100%;
+    }
+
+    @media (max-width: 720px){
+       flex-direction: column;
+       align-items: center;
+       margin-bottom: 50px;
+
+       label p{
+           font-size: 22px;
+       }
+
+       label{
+           width: 80%;
+       }
+
+       input{
+           height: 50px;
+       }
+
+       button{
+           margin-left: 0;
+           width: 50%;
+           height: 40px;
+           font-size: 18px;
+       }
     }
 ` 
 
@@ -66,6 +115,15 @@ export const CustomUl = styled.ul`
     li{
         margin-bottom: 50px;
         margin-right: 50px;
+    }
+
+    @media (max-width: 720px){
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        li{
+            margin-right: 0;
+        }
     }
 
 `

@@ -9,17 +9,21 @@ export const CustomLi = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    >div>button{
-        width: 30px;
-        background-color: transparent;
-        border: none;
-        height: 30px;
-        margin: 0;
-        font-weight: 700;
+    position: relative;
+    
+    button:nth-of-type(1){
         position: absolute;
-        left: 235px;
-        top: -20px;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: var(--black-2);
+        color: var(--white-1);
+        font-weight: 700;
+        top: -5px;
+        right: -10px;
     }
 
     div{
@@ -28,7 +32,6 @@ export const CustomLi = styled.li`
         justify-content: flex-start;
         width: 92%;
         margin-left: 24px;
-        position: relative;
     }
 
     span{
@@ -78,4 +81,21 @@ export const CustomLi = styled.li`
         font-size: 15px;
         border-radius: 5px;
     }
+
+    @media (max-width: 720px){
+        width: 250px;
+        height: 320px;
+        svg{
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        div>p, section>p{
+            font-size: 16px;
+            align-items: flex-start;
+        }
+    
+    }
+
 `

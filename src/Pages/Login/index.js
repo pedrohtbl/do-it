@@ -8,6 +8,7 @@ import * as yup from "yup"
 import Button from "../../components/Button"
 import { Link } from "react-router-dom"
 import { useLogin } from "../../Providers/Login"
+import { Redirect } from "react-router-dom"
 
 const Login = () =>{
 
@@ -16,11 +17,15 @@ const Login = () =>{
         password: yup.string().required("Preencha o campo")
     })
 
-    const {login} = useLogin()
+    const {login,user} = useLogin()
 
     const {handleSubmit,register, formState:{errors}} = useForm({
         resolver: yupResolver(schema)
     })
+
+    if(user.token){
+        return <Redirect to="/dashboard"/>
+    }
 
     const onSubmit = (data) =>{
         login(data)

@@ -10,6 +10,8 @@ import * as yup from "yup"
 import api from "../../Services/api"
 import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom"
+import { useLogin } from "../../Providers/Login"
+import { Redirect } from "react-router-dom"
 
 const Cadastro = () =>{
     const schema = yup.object().shape({
@@ -24,6 +26,12 @@ const Cadastro = () =>{
     })
 
     const history = useHistory()
+
+    const {user} = useLogin()
+
+    if(user.token){
+        return <Redirect to="/dashboard"/>
+    }
 
     const onSubmit = (data) =>{
         const {name,email,password} = data
